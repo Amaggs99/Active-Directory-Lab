@@ -1,1 +1,52 @@
+# Lab Setup Guide
 
+## Step 1
+Create Windows Server VM
+
+Name:
+DC01
+
+Resources:
+- 4 GB RAM
+- 2 CPUs
+- 60 GB Storage
+
+---
+
+## Step 2
+Install Windows Server 2022 Desktop Experience.
+
+---
+
+## Step 3
+Rename server to:
+
+DC01
+
+---
+
+## Step 4
+Configure static IP:
+
+IP Address:
+192.168.10.10
+
+Subnet Mask:
+255.255.255.0
+
+DNS:
+192.168.10.10
+
+---
+
+## Step 5
+Install Active Directory Domain Services.
+
+---
+
+## Step 6
+Promote server to Domain Controller.
+
+Create forest:
+
+austinlab.local
