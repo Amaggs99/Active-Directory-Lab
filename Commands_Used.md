@@ -106,6 +106,114 @@ Downloads a copy of the repository from GitHub.
 
 ---
 
+# Git Bash Commands
+
+## Create a New File
+
+```bash
+touch filename.md
+```
+
+Creates a new empty file in the current directory.
+
+Example:
+
+```bash
+touch README.md
+touch Documentation/Lab-Setup-Guide.md
+```
+
+---
+
+## Create a New Directory
+
+```bash
+mkdir FolderName
+```
+
+Creates a new folder in the current directory.
+
+Example:
+
+```bash
+mkdir Documentation
+mkdir Screenshots
+```
+
+---
+
+## List Directory Contents
+
+```bash
+ls
+```
+
+Displays all files and folders in the current directory.
+
+Example:
+
+```bash
+ls
+ls Documentation
+```
+
+---
+
+## Rename or Move a File
+
+```bash
+mv oldname newname
+```
+
+Renames a file or moves it to a new location.
+
+Example:
+
+```bash
+mv Commands-Used.md.txt Commands-Used.md
+mv Documentation/Helpdesk-Task.md Documentation/Helpdesk-Tasks.md
+```
+
+---
+
+## Change Directory
+
+```bash
+cd directory-name
+```
+
+Changes the current working directory.
+
+Example:
+
+```bash
+cd Documentation
+cd ..
+cd Screenshots
+```
+
+---
+
+## Display Current Directory
+
+```bash
+pwd
+```
+
+Displays the full path of the current working directory.
+
+Example:
+
+```bash
+pwd
+```
+
+Output:
+
+```text
+C:/Users/Austin/Documents/Master-Career/Repositories/Home-Labs/Active-Directory-Lab
+```
+
 # Active Directory Commands
 
 ## Display IP Configuration
