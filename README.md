@@ -15,14 +15,14 @@ This project demonstrates the deployment and administration of a Windows Server 
 
 ## Current Project Status
 
-✅ Domain Controller deployed  
-✅ Active Directory and DNS configured 
-✅ Domain Controller health validated (DCDIAG) 
-✅ Organizational Units created  
-✅ Security Groups created  
-✅ Test Users created  
-🚧 Windows Client domain join in progress  
-🚧 Group Policy configuration pending  
+- ✅ Domain Controller deployed
+- ✅ Active Directory and DNS configured
+- ✅ Domain Controller health validated (DCDIAG)
+- ✅ Organizational Units created
+- ✅ Security Groups created
+- ✅ Test Users created
+- 🚧 Windows Client domain join in progress
+- 🚧 Group Policy configuration pending
 
 ---
 
