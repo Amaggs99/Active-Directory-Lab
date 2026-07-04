@@ -1,5 +1,57 @@
 # Active Directory Home Lab
 
+![Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
+![Windows Server](https://img.shields.io/badge/Windows%20Server-2022-blue)
+![Active Directory](https://img.shields.io/badge/Active%20Directory-Lab-green)
+![GitHub last commit](https://img.shields.io/github/last-commit/Amaggs99/Active-Directory-Lab)
+
+---
+
+## Overview
+
+This project demonstrates the deployment and administration of a Windows Server Active Directory environment in a virtual lab. The purpose of this project is to develop hands-on experience with common help desk and system administration tasks typically performed in enterprise environments.
+
+---
+
+## Current Project Status
+
+✅ Domain Controller deployed  
+✅ Active Directory and DNS configured 
+✅ Domain Controller health validated (DCDIAG) 
+✅ Organizational Units created  
+✅ Security Groups created  
+✅ Test Users created  
+🚧 Windows Client domain join in progress  
+🚧 Group Policy configuration pending  
+
+---
+
+## Latest Milestone
+
+**Milestone 3 – Active Directory Structure Complete**
+
+- Created organizational units
+- Created security groups
+- Created test users
+- Assigned group memberships
+- Updated documentation and screenshots
+
+---
+
+## Objectives
+
+- Deploy a Windows Server Domain Controller
+- Configure Active Directory Domain Services (AD DS)
+- Create and manage Organizational Units (OUs)
+- Create and manage users and security groups
+- Join a Windows client to a domain
+- Perform common help desk administration tasks
+- Document the environment and troubleshooting process
+
+---
+
+## Lab Environment
+
 ## Overview
 
 This project demonstrates the deployment and administration of a Windows Server Active Directory environment in a virtual lab. The purpose of this project is to develop hands-on experience with common help desk and system administration tasks typically performed in enterprise environments.
