@@ -115,3 +115,52 @@ This project demonstrates practical experience relevant to:
 - [x] Renamed Domain Controller to DC01
 - [x] Validated DNS, SYSVOL, and DFS Replication health
 
+## 🚧 TODO / Next Steps
+
+### Phase 2 – Active Directory Structure
+- [ ] Create Organizational Units (OUs)
+- [ ] Admin
+- [ ] Groups
+- [ ] Servers
+- [ ] Service Accounts
+- [ ] Users
+- [ ] HR
+- [ ] IT
+- [ ] Sales
+- [ ] Workstations
+- [ ] Desktops
+- [ ] Laptops
+
+### Phase 3 – User and Group Management
+- [ ] Create test users:
+- [ ] John Doe
+- [ ] Jane Smith
+- [ ] Helpdesk Admin
+- [ ] Create security groups:
+- [ ] IT_Admins
+- [ ] HR_Users
+- [ ] Sales_Users
+- [ ] Assign users to groups.
+
+### Phase 4 – Client Deployment
+- [ ] Create Windows 10/11 client VM.
+- [ ] Configure static networking.
+- [ ] Join client to `adlab.local`.
+- [ ] Verify domain login.
+- [ ] Install RSAT tools.
+
+### Phase 5 – Group Policy
+- [ ] Create desktop wallpaper GPO.
+- [ ] Configure password policy.
+- [ ] Configure account lockout policy.
+- [ ] Deploy a mapped network drive.
+- [ ] Disable Control Panel for a test OU.
+
+### Phase 6 – Documentation
+- [ ] Document OU structure.
+- [ ] Document users and groups.
+- [ ] Document client domain join process.
+- [ ] Document Group Policy configuration.
+- [ ] Update README with screenshots.
+- [ ] Finalize GitHub portfolio documentation.
+
