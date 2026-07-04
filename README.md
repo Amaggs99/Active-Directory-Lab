@@ -104,6 +104,22 @@ This project demonstrates the deployment and administration of a Windows Server 
 
 ---
 
+## Architecture Diagram
+
+![Architecture Diagram](Network-Diagram.png)
+
+**Figure 1:** High-level network topology of the Active Directory home lab environment.
+
+### Network Overview
+
+- DC01 – Windows Server 2022 Domain Controller
+- CLIENT01 – Windows 11 Domain-Joined Workstation
+- NAT Adapter – Internet connectivity
+- Host-Only Adapter – Internal lab communication
+- Domain: austinlab.local
+
+---
+
 ## Technologies Used
 
 - Windows Server 2022
