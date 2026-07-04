@@ -104,3 +104,14 @@ This project demonstrates practical experience relevant to:
 - Service Desk Technician
 - Junior Systems Administrator
 - Desktop Support Technician
+
+## Progress
+
+### Completed
+- [x] Installed Windows Server 2022
+- [x] Configured static IP addressing
+- [x] Installed Active Directory Domain Services
+- [x] Promoted server to Domain Controller
+- [x] Renamed Domain Controller to DC01
+- [x] Validated DNS, SYSVOL, and DFS Replication health
+
