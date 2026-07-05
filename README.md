@@ -21,40 +21,21 @@ This project demonstrates the deployment and administration of a Windows Server 
 - ✅ Organizational Units created
 - ✅ Security Groups created
 - ✅ Test Users created
-- 🚧 Windows Client domain join in progress
+- ✅ Windows 11 client joined to domain
+- ✅ Domain authentication verified
 - 🚧 Group Policy configuration pending
 
 ---
 
 ## Latest Milestone
 
-**Milestone 3 – Active Directory Structure Complete**
+### Milestone 4 – Domain Join Complete
 
-- Created organizational units
-- Created security groups
-- Created test users
-- Assigned group memberships
-- Updated documentation and screenshots
-
----
-
-## Objectives
-
-- Deploy a Windows Server Domain Controller
-- Configure Active Directory Domain Services (AD DS)
-- Create and manage Organizational Units (OUs)
-- Create and manage users and security groups
-- Join a Windows client to a domain
-- Perform common help desk administration tasks
-- Document the environment and troubleshooting process
-
----
-
-## Lab Environment
-
-## Overview
-
-This project demonstrates the deployment and administration of a Windows Server Active Directory environment in a virtual lab. The purpose of this project is to develop hands-on experience with common help desk and system administration tasks typically performed in enterprise environments.
+- Configured Windows 11 client networking
+- Joined CLIENT01 to `adlab.local`
+- Verified DNS resolution
+- Verified domain authentication
+- Added screenshots and documentation
 
 ---
 
@@ -73,34 +54,38 @@ This project demonstrates the deployment and administration of a Windows Server 
 ## Lab Environment
 
 ### Virtualization Platform
+
 - VMware Workstation Pro
 - VirtualBox (optional migration platform)
 
 ### Servers and Clients
 
 | Device | Operating System | Purpose |
-|---------|-----------------|----------|
+|--------|------------------|----------|
 | DC01 | Windows Server 2022 | Domain Controller |
-| CLIENT01 | Windows 10/11 | Domain Joined Workstation |
+| CLIENT01 | Windows 11 | Domain Joined Workstation |
 
 ---
 
 ## Domain Information
 
-**Domain Name:**  
-`austinlab.local`
+**Domain Name:** `adlab.local`
 
 ---
 
 ## Network Configuration
 
 ### DC01
-- Static IP Address: `192.168.56.10`
+
+- Static IP Address: `192.168.66.10`
 - Subnet Mask: `255.255.255.0`
-- DNS Server: `192.168.56.10`
+- Preferred DNS Server: `192.168.66.10`
 
 ### CLIENT01
-- DNS Server: `192.168.56.10`
+
+- Static IP Address: `192.168.66.20`
+- Subnet Mask: `255.255.255.0`
+- Preferred DNS Server: `192.168.66.10`
 
 ---
 
@@ -112,11 +97,10 @@ This project demonstrates the deployment and administration of a Windows Server 
 
 ### Network Overview
 
-- DC01 – Windows Server 2022 Domain Controller
+- DC01 – Windows Server 2022 Domain Controller and DNS Server
 - CLIENT01 – Windows 11 Domain-Joined Workstation
-- NAT Adapter – Internet connectivity
-- Host-Only Adapter – Internal lab communication
-- Domain: austinlab.local
+- VMnet1 Host-Only Network – Internal lab communication
+- Domain: `adlab.local`
 
 ---
 
@@ -125,7 +109,7 @@ This project demonstrates the deployment and administration of a Windows Server 
 - Windows Server 2022
 - Active Directory Domain Services (AD DS)
 - DNS
-- Windows 10/11
+- Windows 11
 - PowerShell
 - VMware Workstation Pro
 - VirtualBox
@@ -141,18 +125,18 @@ This project demonstrates the deployment and administration of a Windows Server 
 - Organizational Unit (OU) management
 - User account administration
 - Security group administration
-- PowerShell automation
 - DNS configuration and troubleshooting
 - Windows Server administration
 - Domain controller health validation
-- Documentation and version control using Git
+- PowerShell administration and automation
+- Documentation and version control using Git and GitHub
 
 ---
 
 ## Active Directory Structure
 
 ```text
-austinlab.local
+adlab.local
 └── Company
     ├── Users
     ├── Groups
@@ -190,9 +174,11 @@ Sales
 - Created domain users
 - Created security groups
 - Added users to security groups
-- Verified domain health using DCDIAG
+- Joined a Windows client to the domain
+- Verified domain authentication
+- Verified domain controller health using DCDIAG
 - Documented configuration and screenshots
-- Used PowerShell to automate Active Directory administration tasks
+- Used PowerShell to automate administrative tasks
 
 ---
 
@@ -209,12 +195,39 @@ The following screenshots are available in the `Screenshots` folder:
 - OU-Structure.png
 - Security-Groups.png
 - AD-Users.png
+- CLIENT01-Domain-Joined.png
+- Client-Domain-Login.png
+- Client-System-Properties.png
 
 ---
 
 ## Documentation
 
 Detailed documentation can be found in the `Documentation` folder.
+
+Current documentation includes:
+
+- Commands-Used.md
+- Domain-Controller-Setup.md
+- Troubleshooting.md
+
+Planned additions:
+
+- Client-Domain-Join.md
+- OU-Structure.md
+- User-Management.md
+- Group-Policy.md
+
+---
+
+## Lessons Learned
+
+- DNS is critical to Active Directory functionality.
+- Virtual networking configuration directly impacts domain communication.
+- Domain controllers should use static IP addressing.
+- Documentation and screenshots simplify troubleshooting.
+- PowerShell can automate many administrative tasks.
+- Proper planning of OU and group structures improves manageability.
 
 ---
 
@@ -245,22 +258,16 @@ This project demonstrates practical experience relevant to:
 - [x] Created security groups
 - [x] Created test users
 - [x] Added users to security groups
+- [x] Configured Windows 11 client networking
+- [x] Joined CLIENT01 to adlab.local
+- [x] Verified domain login
+- [x] Verified DNS resolution
 - [x] Collected implementation screenshots
 - [x] Updated project documentation
 
 ---
 
 # 🚧 TODO / Next Steps
-
-## Phase 4 – Client Deployment
-
-- [ ] Create Windows 11 client VM
-- [ ] Configure networking
-- [ ] Join client to `austinlab.local`
-- [ ] Verify domain login
-- [ ] Install RSAT tools
-
----
 
 ## Phase 5 – Group Policy
 
@@ -272,23 +279,24 @@ This project demonstrates practical experience relevant to:
 
 ---
 
-## Phase 6 – Advanced Administration
+## Phase 6 – Help Desk Administration
+
+- [ ] Reset user passwords
+- [ ] Disable user accounts
+- [ ] Unlock user accounts
+- [ ] Create additional users
+- [ ] Create additional security groups
+- [ ] Delegate permissions
+
+---
+
+## Phase 7 – Advanced Administration
 
 - [ ] Create shared folders and NTFS permissions
 - [ ] Configure roaming profiles (optional)
 - [ ] Create service accounts
-- [ ] Delegate administrative permissions
 - [ ] Implement backup procedures
-
----
-
-## Phase 7 – Documentation & Portfolio
-
-- [ ] Document client domain join process
-- [ ] Document Group Policy configuration
-- [ ] Add final screenshots
-- [ ] Finalize GitHub portfolio documentation
-- [ ] Create architecture/network diagram
+- [ ] Configure PowerShell automation scripts
 
 ---
 
@@ -313,7 +321,10 @@ Active-Directory-Lab
     ├── DC01-DCDiag-04.png
     ├── OU-Structure.png
     ├── Security-Groups.png
-    └── AD-Users.png
+    ├── AD-Users.png
+    ├── CLIENT01-Domain-Joined.png
+    ├── Client-Domain-Login.png
+    └── Client-System-Properties.png
 ```
 
 ---
