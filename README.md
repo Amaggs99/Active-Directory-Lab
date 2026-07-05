@@ -1,6 +1,6 @@
 # Active Directory Home Lab
 
-![Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
 ![Windows Server](https://img.shields.io/badge/Windows%20Server-2022-blue)
 ![Active Directory](https://img.shields.io/badge/Active%20Directory-Lab-green)
 ![GitHub last commit](https://img.shields.io/github/last-commit/Amaggs99/Active-Directory-Lab)
@@ -23,7 +23,8 @@ This project demonstrates the deployment and administration of a Windows Server 
 - ✅ Test Users created
 - ✅ Windows 11 client joined to domain
 - ✅ Domain authentication verified
-- 🚧 Group Policy configuration pending
+- ✅ Active Directory deployment complete
+- 🚧 Future administration tasks moved to separate repositories
 
 ---
 
@@ -61,7 +62,7 @@ This project demonstrates the deployment and administration of a Windows Server 
 ### Servers and Clients
 
 | Device | Operating System | Purpose |
-|--------|------------------|----------|
+|---------|------------------|----------|
 | DC01 | Windows Server 2022 | Domain Controller |
 | CLIENT01 | Windows 11 | Domain Joined Workstation |
 
@@ -199,6 +200,18 @@ The following screenshots are available in the `Screenshots` folder:
 - Client-Domain-Login.png
 - Client-System-Properties.png
 
+### CLIENT01 Successfully Joined to Domain
+
+![Domain Join](Screenshots/CLIENT01-Domain-Joined.png)
+
+### Domain Authentication Verified
+
+![Domain Login](Screenshots/Client-Domain-Login.png)
+
+### System Properties
+
+![System Properties](Screenshots/Client-System-Properties.png)
+
 ---
 
 ## Documentation
@@ -210,13 +223,13 @@ Current documentation includes:
 - Commands-Used.md
 - Domain-Controller-Setup.md
 - Troubleshooting.md
+- Project-Summary.md
 
-Planned additions:
+Future documentation will be maintained in separate repositories:
 
-- Client-Domain-Join.md
-- OU-Structure.md
-- User-Management.md
-- Group-Policy.md
+- IT-Helpdesk-Lab
+- Group-Policy-Lab
+- PowerShell-AD-Automation
 
 ---
 
@@ -264,39 +277,46 @@ This project demonstrates practical experience relevant to:
 - [x] Verified DNS resolution
 - [x] Collected implementation screenshots
 - [x] Updated project documentation
+- [x] Completed Active Directory deployment
 
 ---
 
-# 🚧 TODO / Next Steps
+# 🚀 Future Enhancements
 
-## Phase 5 – Group Policy
+Additional administration scenarios will be implemented in separate repositories.
 
-- [ ] Create desktop wallpaper GPO
-- [ ] Configure password policy
-- [ ] Configure account lockout policy
-- [ ] Deploy a mapped network drive
-- [ ] Disable Control Panel for a test OU
+## Planned Repositories
+
+### IT-Helpdesk-Lab
+
+- Password resets
+- Account lockouts
+- Account unlocks
+- User onboarding and offboarding
+- Shared folders and NTFS permissions
+
+### Group-Policy-Lab
+
+- Password policies
+- Account lockout policies
+- Desktop wallpaper deployment
+- Drive mappings
+- Workstation restrictions
+
+### PowerShell-AD-Automation
+
+- Bulk user creation
+- OU creation scripts
+- Group creation scripts
+- Reporting and administration automation
 
 ---
 
-## Phase 6 – Help Desk Administration
+## Project Completion Status
 
-- [ ] Reset user passwords
-- [ ] Disable user accounts
-- [ ] Unlock user accounts
-- [ ] Create additional users
-- [ ] Create additional security groups
-- [ ] Delegate permissions
+This repository is considered complete and demonstrates the deployment of a Windows Active Directory environment from initial server installation through domain client integration.
 
----
-
-## Phase 7 – Advanced Administration
-
-- [ ] Create shared folders and NTFS permissions
-- [ ] Configure roaming profiles (optional)
-- [ ] Create service accounts
-- [ ] Implement backup procedures
-- [ ] Configure PowerShell automation scripts
+Future administrative tasks and advanced scenarios will be documented in separate repositories.
 
 ---
 
@@ -310,7 +330,8 @@ Active-Directory-Lab
 ├── Documentation
 │   ├── Commands-Used.md
 │   ├── Domain-Controller-Setup.md
-│   └── Troubleshooting.md
+│   ├── Troubleshooting.md
+│   └── Project-Summary.md
 │
 └── Screenshots
     ├── DC01-IPConfig.png
@@ -334,3 +355,11 @@ Active-Directory-Lab
 **Austin Maggs**
 
 GitHub: https://github.com/Amaggs99
+
+---
+
+## Related Projects
+
+- IT-Helpdesk-Lab *(Planned)*
+- Group-Policy-Lab *(Planned)*
+- PowerShell-AD-Automation *(Planned)*
