@@ -1,43 +1,228 @@
 # Installation Notes
 
-## Configure Static IP
-
-IP Address: 192.168.10.10
-Subnet Mask: 255.255.255.0
-Default Gateway: 192.168.10.1
-Preferred DNS Server: 192.168.10.10
+This document outlines the initial deployment and configuration of the Active Directory Home Lab environment.
 
 ---
 
-## Install Roles and Features
+# Environment Information
 
-Installed Server Roles:
+| Item | Value |
+|------|--------|
+| Hypervisor | VMware Workstation Pro |
+| Domain Controller | DC01 |
+| Client Workstation | CLIENT01 |
+| Domain Name | adlab.local |
+| Forest Functional Level | Windows Server 2022 |
+| Domain Functional Level | Windows Server 2022 |
+
+---
+
+# Server Configuration
+
+## Server Name
+
+```text
+DC01
+```
+
+---
+
+## Host-Only Network Configuration
+
+### Domain Controller (DC01)
+
+| Setting | Value |
+|----------|--------|
+| IP Address | 192.168.66.10 |
+| Subnet Mask | 255.255.255.0 |
+| Default Gateway | None |
+| Preferred DNS Server | 192.168.66.10 |
+
+---
+
+### Client Workstation (CLIENT01)
+
+| Setting | Value |
+|----------|--------|
+| IP Address | 192.168.66.20 |
+| Subnet Mask | 255.255.255.0 |
+| Default Gateway | None |
+| Preferred DNS Server | 192.168.66.10 |
+
+---
+
+# Installed Server Roles
+
+The following Windows Server roles were installed:
 
 - Active Directory Domain Services (AD DS)
 - DNS Server
 
 ---
 
-## Promote Server to Domain Controller
+# Active Directory Deployment
 
-Domain:
-corp.local
+## Domain Information
 
-Server Name:
-DC01
-
-Forest Functional Level:
-Windows Server 2022
-
-Domain Functional Level:
-Windows Server 2022
+```text
+Domain Name: adlab.local
+NetBIOS Name: ADLAB
+```
 
 ---
 
-## Verify Installation
+## Domain Controller Promotion
 
-Checks Performed:
+The server was promoted to a Domain Controller using:
 
-- DNS service running
-- Active Directory Users and Computers accessible
-- Domain Controller operational
+```text
+Add a new forest
+```
+
+with the following configuration:
+
+| Setting | Value |
+|----------|--------|
+| Domain Name | adlab.local |
+| Forest Functional Level | Windows Server 2022 |
+| Domain Functional Level | Windows Server 2022 |
+| DNS Server | Installed |
+| Global Catalog | Enabled |
+
+---
+
+# Organizational Structure Created
+
+```text
+adlab.local
+└── Company
+    ├── Users
+    ├── Groups
+    ├── Computers
+    ├── Servers
+    └── Service Accounts
+```
+
+---
+
+# Security Groups Created
+
+```text
+IT_Admins
+HelpDesk
+HR
+Sales
+```
+
+---
+
+# Test Users Created
+
+| Name | Username | Department |
+|------|-----------|------------|
+| John Smith | jsmith | IT |
+| Sarah Brown | sbrown | Help Desk |
+| Emily Davis | edavis | HR |
+| Mike Wilson | mwilson | Sales |
+
+---
+
+# Validation and Health Checks
+
+The following validation steps were completed:
+
+## Verify IP Configuration
+
+```cmd
+ipconfig /all
+```
+
+---
+
+## Verify Domain Controller Health
+
+```cmd
+dcdiag /v
+```
+
+---
+
+## Verify DNS Resolution
+
+```cmd
+nslookup adlab.local
+```
+
+---
+
+## Verify Active Directory Services
+
+```powershell
+Get-Service NTDS,DNS,Netlogon,KDC
+```
+
+---
+
+## Verify Domain Information
+
+```powershell
+Get-ADDomain
+```
+
+---
+
+## Verify Forest Information
+
+```powershell
+Get-ADForest
+```
+
+---
+
+# Client Domain Join Validation
+
+The following tests were completed successfully:
+
+- CLIENT01 joined to adlab.local
+- DNS resolution verified
+- Domain authentication verified
+- CLIENT01 visible in Active Directory Users and Computers
+- Successful login using domain credentials
+
+---
+
+# Screenshots Collected
+
+- DC01-IPConfig.png
+- DC01-DomainInfo.png
+- DC01-DCDiag-01.png
+- DC01-DCDiag-02.png
+- DC01-DCDiag-03.png
+- DC01-DCDiag-04.png
+- OU-Structure.png
+- Security-Groups.png
+- AD-Users.png
+- CLIENT01-Domain-Joined.png
+- Client-Domain-Login.png
+- Client-System-Properties.png
+
+---
+
+# Lessons Learned
+
+- DNS is critical to Active Directory functionality.
+- Static IP addressing should be configured before promoting a Domain Controller.
+- Proper virtual network configuration is essential for domain communication.
+- Documentation and screenshots significantly simplify troubleshooting and future administration.
+- PowerShell provides a powerful method for administering Active Directory.
+
+---
+
+# Final Status
+
+The Active Directory environment has been successfully deployed and validated. This environment will serve as the baseline for future projects involving:
+
+- Help Desk Administration
+- Group Policy Management
+- PowerShell Automation
+- File Server Administration

@@ -1,5 +1,9 @@
 # Commands Used
 
+This document contains Git, Windows, networking, PowerShell, and Active Directory commands used throughout the Active Directory Home Lab.
+
+---
+
 # Git Commands
 
 ## Check Repository Status
@@ -8,11 +12,7 @@
 git status
 ```
 
-Displays:
-- Modified files
-- Untracked files
-- Staged files
-- Current branch status
+Displays modified files, untracked files, staged files, and current branch status.
 
 ---
 
@@ -76,26 +76,6 @@ Shows the GitHub repository associated with the local project.
 
 ---
 
-## Configure Git Username
-
-```bash
-git config --global user.name "Austin Maggs"
-```
-
-Sets the global Git username.
-
----
-
-## Configure Git Email
-
-```bash
-git config --global user.email "austinmaggs@gmail.com"
-```
-
-Sets the global Git email address.
-
----
-
 ## Clone Repository
 
 ```bash
@@ -114,13 +94,11 @@ Downloads a copy of the repository from GitHub.
 touch filename.md
 ```
 
-Creates a new empty file in the current directory.
-
 Example:
 
 ```bash
 touch README.md
-touch Documentation/Lab-Setup-Guide.md
+touch Documentation/Project-Summary.md
 ```
 
 ---
@@ -130,8 +108,6 @@ touch Documentation/Lab-Setup-Guide.md
 ```bash
 mkdir FolderName
 ```
-
-Creates a new folder in the current directory.
 
 Example:
 
@@ -148,14 +124,7 @@ mkdir Screenshots
 ls
 ```
 
-Displays all files and folders in the current directory.
-
-Example:
-
-```bash
-ls
-ls Documentation
-```
+Displays files and folders in the current directory.
 
 ---
 
@@ -165,13 +134,10 @@ ls Documentation
 mv oldname newname
 ```
 
-Renames a file or moves it to a new location.
-
 Example:
 
 ```bash
 mv Commands-Used.md.txt Commands-Used.md
-mv Documentation/Helpdesk-Task.md Documentation/Helpdesk-Tasks.md
 ```
 
 ---
@@ -181,8 +147,6 @@ mv Documentation/Helpdesk-Task.md Documentation/Helpdesk-Tasks.md
 ```bash
 cd directory-name
 ```
-
-Changes the current working directory.
 
 Example:
 
@@ -202,19 +166,9 @@ pwd
 
 Displays the full path of the current working directory.
 
-Example:
+---
 
-```bash
-pwd
-```
-
-Output:
-
-```text
-C:/Users/Austin/Documents/Master-Career/Repositories/Home-Labs/Active-Directory-Lab
-```
-
-# Active Directory Commands
+# Windows Networking Commands
 
 ## Display IP Configuration
 
@@ -223,26 +177,6 @@ ipconfig /all
 ```
 
 Displays detailed network adapter information.
-
----
-
-## Test Name Resolution
-
-```cmd
-nslookup corp.local
-```
-
-Tests DNS functionality.
-
----
-
-## Test Connectivity
-
-```cmd
-ping dc01
-```
-
-Verifies network communication.
 
 ---
 
@@ -256,30 +190,354 @@ Clears the DNS resolver cache.
 
 ---
 
-## Force Group Policy Update
+## Test Connectivity
 
 ```cmd
-gpupdate /force
+ping 192.168.66.10
 ```
 
-Immediately refreshes Group Policy settings.
+Tests communication with the Domain Controller.
 
 ---
 
-## Open Active Directory Users and Computers
+## Test Domain DNS Resolution
+
+```cmd
+nslookup adlab.local
+```
+
+Verifies DNS resolution for the Active Directory domain.
+
+---
+
+## View Routing Table
+
+```cmd
+route print
+```
+
+Displays the local routing table.
+
+---
+
+# Active Directory PowerShell Commands
+
+## Import Active Directory Module
+
+```powershell
+Import-Module ActiveDirectory
+```
+
+Loads the Active Directory PowerShell module.
+
+---
+
+## View Domain Information
+
+```powershell
+Get-ADDomain
+```
+
+Displays Active Directory domain information.
+
+---
+
+## View Forest Information
+
+```powershell
+Get-ADForest
+```
+
+Displays Active Directory forest information.
+
+---
+
+## Create an Organizational Unit
+
+```powershell
+New-ADOrganizationalUnit -Name "Users" -Path "OU=Company,DC=adlab,DC=local"
+```
+
+Creates a new Organizational Unit.
+
+---
+
+## Create a Security Group
+
+```powershell
+New-ADGroup -Name "IT_Admins" -GroupScope Global -GroupCategory Security -Path "OU=Groups,OU=Company,DC=adlab,DC=local"
+```
+
+Creates a new Active Directory security group.
+
+---
+
+## Create a User
+
+```powershell
+New-ADUser -Name "John Smith" -SamAccountName jsmith -AccountPassword (ConvertTo-SecureString "Password123!" -AsPlainText -Force) -Enabled $true
+```
+
+Creates and enables a new Active Directory user.
+
+---
+
+## Add User to Group
+
+```powershell
+Add-ADGroupMember -Identity "IT_Admins" -Members jsmith
+```
+
+Adds a user to an Active Directory group.
+
+---
+
+## Verify Users
+
+```powershell
+Get-ADUser -Filter * -SearchBase "OU=Users,OU=Company,DC=adlab,DC=local" | Select Name,SamAccountName,Enabled
+```
+
+Displays users created inside the lab Users OU.
+
+---
+
+## Verify Groups
+
+```powershell
+Get-ADGroup -Filter * -SearchBase "OU=Groups,OU=Company,DC=adlab,DC=local" | Select Name
+```
+
+Displays groups created inside the lab Groups OU.
+
+---
+
+# Domain Controller Validation Commands
+
+## Run Domain Controller Diagnostics
+
+```cmd
+dcdiag /v
+```
+
+Runs detailed diagnostic tests against the Domain Controller.
+
+---
+
+## Run DNS-Specific Diagnostic Test
+
+```cmd
+dcdiag /test:DNS
+```
+
+Checks DNS health for the Domain Controller.
+
+---
+
+## Check Important AD Services
+
+```powershell
+Get-Service NTDS,DNS,Netlogon,KDC
+```
+
+Verifies that core Active Directory services are running.
+
+---
+
+## Check VMware Tools Service
+
+```powershell
+Get-Service VMTools
+```
+
+Checks whether VMware Tools is installed and running.
+
+---
+
+# Client Domain Join Commands
+
+## Rename Windows Client
+
+```powershell
+Rename-Computer -NewName "CLIENT01" -Restart
+```
+
+Renames the Windows client and restarts the machine.
+
+---
+
+## Join Client to Domain
+
+```powershell
+Add-Computer -DomainName adlab.local -Credential adlab\Administrator -Restart
+```
+
+Joins the Windows client to the Active Directory domain.
+
+---
+
+## Verify Logged-In User
+
+```cmd
+whoami
+```
+
+Shows the currently logged-in user.
+
+Example:
+
+```text
+adlab\administrator
+```
+
+---
+
+## Verify Computer Name
+
+```cmd
+hostname
+```
+
+Displays the local computer name.
+
+---
+
+# Windows Administration Consoles
+
+## Active Directory Users and Computers
 
 ```cmd
 dsa.msc
 ```
 
-Launches the Active Directory administration console.
+Opens Active Directory Users and Computers.
 
 ---
 
-## Open Group Policy Management
+## Group Policy Management
 
 ```cmd
 gpmc.msc
 ```
 
-Launches the Group Policy Management Console.
+Opens Group Policy Management Console.
+
+---
+
+## DNS Manager
+
+```cmd
+dnsmgmt.msc
+```
+
+Opens DNS Manager.
+
+---
+
+## Server Manager
+
+```cmd
+servermanager
+```
+
+Opens Server Manager.
+
+---
+
+## System Properties
+
+```cmd
+sysdm.cpl
+```
+
+Opens System Properties.
+
+---
+
+## Network Connections
+
+```cmd
+ncpa.cpl
+```
+
+Opens Network Connections.
+
+---
+
+# Firewall Commands
+
+## Disable Windows Firewall Temporarily
+
+```powershell
+Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
+```
+
+Used temporarily during troubleshooting to test connectivity.
+
+---
+
+## Enable Windows Firewall
+
+```powershell
+Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True
+```
+
+Re-enables Windows Firewall.
+
+---
+
+## Enable File and Printer Sharing Ping Rules
+
+```powershell
+Enable-NetFirewallRule -DisplayGroup "File and Printer Sharing"
+```
+
+Allows ICMP/ping responses through Windows Firewall.
+
+---
+
+# VMware Tasks
+
+## Take Snapshot
+
+```text
+VM → Snapshot → Take Snapshot
+```
+
+Creates a restore point of the lab environment.
+
+---
+
+## Restore Snapshot
+
+```text
+VM → Snapshot → Snapshot Manager
+```
+
+Restores the VM to a previous lab state.
+
+---
+
+## Install VMware Tools
+
+```text
+VM → Install VMware Tools
+```
+
+Mounts VMware Tools inside the guest operating system.
+
+---
+
+## Open Virtual Network Editor
+
+```text
+Edit → Virtual Network Editor
+```
+
+Used to verify VMnet1 Host-Only and VMnet8 NAT configuration.
+
+---
+
+# Lab Notes
+
+These commands were used throughout the Active Directory Home Lab to deploy, troubleshoot, and administer the environment. They serve as a quick reference for future projects, documentation, and interview preparation.
