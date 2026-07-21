@@ -1,3 +1,5 @@
+![Active Directory Home Lab Banner](Assets/Banner.png)
+
 # Active Directory Home Lab
 
 ![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
