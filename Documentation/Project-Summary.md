@@ -1,8 +1,8 @@
-\# Project Summary
+# Project Summary
 
 
 
-\## Project Overview
+## Project Overview
 
 
 
@@ -14,11 +14,11 @@ The objective of this project was to gain practical experience with enterprise s
 
 
 
-\---
+---
 
 
 
-\# Environment Information
+# Environment Information
 
 
 
@@ -42,85 +42,85 @@ The objective of this project was to gain practical experience with enterprise s
 
 
 
-\---
+---
 
 
 
-\# Project Objectives
+# Project Objectives
 
 
 
-\- Deploy Windows Server 2022
+- Deploy Windows Server 2022
 
-\- Install Active Directory Domain Services (AD DS)
+- Install Active Directory Domain Services (AD DS)
 
-\- Configure DNS
+- Configure DNS
 
-\- Create Organizational Units (OUs)
+- Create Organizational Units (OUs)
 
-\- Create Security Groups
+- Create Security Groups
 
-\- Create and manage domain users
+- Create and manage domain users
 
-\- Deploy a Windows 11 client
+- Deploy a Windows 11 client
 
-\- Join the client to the domain
+- Join the client to the domain
 
-\- Verify domain authentication
+- Verify domain authentication
 
-\- Document the deployment and troubleshooting process
-
-
-
-\---
+- Document the deployment and troubleshooting process
 
 
 
-\# Completed Work
+---
 
 
 
-\## Infrastructure Deployment
+# Completed Work
 
 
 
-\- Installed Windows Server 2022
-
-\- Renamed server to DC01
-
-\- Configured static networking
-
-\- Installed VMware Tools
-
-\- Configured Host-Only networking
+## Infrastructure Deployment
 
 
 
-\---
+- Installed Windows Server 2022
+
+- Renamed server to DC01
+
+- Configured static networking
+
+- Installed VMware Tools
+
+- Configured Host-Only networking
 
 
 
-\## Active Directory Deployment
+---
 
 
 
-\- Installed Active Directory Domain Services
-
-\- Promoted server to Domain Controller
-
-\- Configured DNS Server
-
-\- Verified Domain Controller health using DCDIAG
-
-\- Verified DNS functionality
+## Active Directory Deployment
 
 
 
-\---
+- Installed Active Directory Domain Services
+
+- Promoted server to Domain Controller
+
+- Configured DNS Server
+
+- Verified Domain Controller health using DCDIAG
+
+- Verified DNS functionality
 
 
 
-\## Active Directory Administration
+---
+
+
+
+## Active Directory Administration
 
 
 
@@ -152,7 +152,7 @@ Created Security Groups:
 
 ```text
 
-IT\_Admins
+IT_Admins
 
 HelpDesk
 
@@ -168,13 +168,13 @@ Created Test Users:
 
 
 
-\- John Smith (jsmith)
+- John Smith (jsmith)
 
-\- Sarah Brown (sbrown)
+- Sarah Brown (sbrown)
 
-\- Emily Davis (edavis)
+- Emily Davis (edavis)
 
-\- Mike Wilson (mwilson)
+- Mike Wilson (mwilson)
 
 
 
@@ -182,35 +182,35 @@ Added users to appropriate security groups.
 
 
 
-\---
+---
 
 
 
-\## Client Deployment
+## Client Deployment
 
 
 
-\- Installed Windows 11
+- Installed Windows 11
 
-\- Configured static networking
+- Configured static networking
 
-\- Renamed workstation to CLIENT01
+- Renamed workstation to CLIENT01
 
-\- Joined CLIENT01 to adlab.local
+- Joined CLIENT01 to adlab.local
 
-\- Verified DNS resolution
+- Verified DNS resolution
 
-\- Verified domain authentication
+- Verified domain authentication
 
-\- Verified communication with Domain Controller
-
-
-
-\---
+- Verified communication with Domain Controller
 
 
 
-\# Validation Performed
+---
+
+
+
+# Validation Performed
 
 
 
@@ -236,135 +236,135 @@ Additional validation:
 
 
 
-\- Active Directory Users and Computers accessible
+- Active Directory Users and Computers accessible
 
-\- DNS service operational
+- DNS service operational
 
-\- SYSVOL replication healthy
+- SYSVOL replication healthy
 
-\- Domain login successful
+- Domain login successful
 
-\- CLIENT01 visible within Active Directory
+- CLIENT01 visible within Active Directory
 
 
 
-\---
+---
 
 
 
-\# Skills Demonstrated
+# Skills Demonstrated
 
 
 
-\## Windows Server Administration
+## Windows Server Administration
 
 
 
-\- Server installation and configuration
+- Server installation and configuration
 
-\- Domain Controller deployment
+- Domain Controller deployment
 
-\- DNS configuration
+- DNS configuration
 
 
 
-\---
+---
 
 
 
-\## Active Directory Administration
+## Active Directory Administration
 
 
 
-\- Organizational Unit management
+- Organizational Unit management
 
-\- User administration
+- User administration
 
-\- Security group administration
+- Security group administration
 
-\- Domain joining
+- Domain joining
 
 
 
-\---
+---
 
 
 
-\## Networking
+## Networking
 
 
 
-\- Static IP configuration
+- Static IP configuration
 
-\- DNS troubleshooting
+- DNS troubleshooting
 
-\- Virtual networking
+- Virtual networking
 
-\- Network connectivity validation
+- Network connectivity validation
 
 
 
-\---
+---
 
 
 
-\## Troubleshooting
+## Troubleshooting
 
 
 
-\- VMware networking issues
+- VMware networking issues
 
-\- DNS resolution problems
+- DNS resolution problems
 
-\- Domain join troubleshooting
+- Domain join troubleshooting
 
-\- Service validation
+- Service validation
 
 
 
-\---
+---
 
 
 
-\## Documentation and Version Control
+## Documentation and Version Control
 
 
 
-\- Technical documentation
+- Technical documentation
 
-\- Screenshot collection
+- Screenshot collection
 
-\- Git and GitHub version control
+- Git and GitHub version control
 
-\- Project organization and repository management
+- Project organization and repository management
 
 
 
-\---
+---
 
 
 
-\# Lessons Learned
+# Lessons Learned
 
 
 
-\- DNS is critical to Active Directory functionality.
+- DNS is critical to Active Directory functionality.
 
-\- Domain Controllers should always use static IP addressing.
+- Domain Controllers should always use static IP addressing.
 
-\- Proper virtual network configuration is essential for domain communication.
+- Proper virtual network configuration is essential for domain communication.
 
-\- PowerShell significantly simplifies system administration tasks.
+- PowerShell significantly simplifies system administration tasks.
 
-\- Thorough documentation makes troubleshooting and future administration easier.
+- Thorough documentation makes troubleshooting and future administration easier.
 
 
 
-\---
+---
 
 
 
-\# Final Status
+# Final Status
 
 
 
@@ -376,23 +376,23 @@ This repository serves as the baseline Active Directory environment for future p
 
 
 
-\- IT Help Desk Administration
+- IT Help Desk Administration
 
-\- Group Policy Management
+- Group Policy Management
 
-\- PowerShell Automation
+- PowerShell Automation
 
-\- File Server Administration
+- File Server Administration
 
-\- Advanced Windows Server Administration
-
-
-
-\---
+- Advanced Windows Server Administration
 
 
 
-\# Repository Purpose
+---
+
+
+
+# Repository Purpose
 
 
 
@@ -400,13 +400,12 @@ This repository demonstrates the ability to:
 
 
 
-\- Build an Active Directory environment from scratch.
+- Build an Active Directory environment from scratch.
 
-\- Configure and validate enterprise services.
+- Configure and validate enterprise services.
 
-\- Document technical implementations.
+- Document technical implementations.
 
-\- Troubleshoot and resolve infrastructure issues.
+- Troubleshoot and resolve infrastructure issues.
 
-\- Maintain a professional project repository suitable for portfolio and resume use.
-
+- Maintain a professional project repository suitable for portfolio and resume use.
