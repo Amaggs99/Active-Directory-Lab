@@ -146,6 +146,12 @@ adlab.local
     └── Service Accounts
 ```
 
+### Organizational Unit Structure
+
+The Active Directory environment uses a structured Organizational Unit design to logically organize users, groups, computers, servers, and service accounts.
+
+![Active Directory OU Structure](Screenshots/OU-Structure.png)
+
 ### Security Groups
 
 ```text
@@ -163,6 +169,12 @@ Sales
 | Sarah Brown | sbrown | HelpDesk |
 | Emily Davis | edavis | HR |
 | Mike Wilson | mwilson | Sales |
+
+### Active Directory User Administration
+
+Test user accounts were created and organized within Active Directory to simulate users across multiple departments.
+
+![Active Directory Users](Screenshots/AD-Users.png)
 
 ---
 
@@ -183,53 +195,36 @@ Sales
 
 ---
 
-## Screenshots
-
-The following screenshots are available in the `Screenshots` folder:
-
-- DC01-IPConfig.png
-- DC01-DomainInfo.png
-- DC01-DCDiag-01.png
-- DC01-DCDiag-02.png
-- DC01-DCDiag-03.png
-- DC01-DCDiag-04.png
-- OU-Structure.png
-- Security-Groups.png
-- AD-Users.png
-- CLIENT01-Domain-Joined.png
-- Client-Domain-Login.png
-- Client-System-Properties.png
+## Domain Client Integration
 
 ### CLIENT01 Successfully Joined to Domain
+
+CLIENT01 was successfully joined to the `adlab.local` Active Directory domain.
 
 ![Domain Join](Screenshots/CLIENT01-Domain-Joined.png)
 
 ### Domain Authentication Verified
 
+Domain authentication was successfully verified from the Windows 11 client using an Active Directory user account.
+
 ![Domain Login](Screenshots/Client-Domain-Login.png)
-
-### System Properties
-
-![System Properties](Screenshots/Client-System-Properties.png)
 
 ---
 
 ## Documentation
 
-Detailed documentation can be found in the `Documentation` folder.
+Detailed implementation, administration, troubleshooting, and validation documentation can be found in the `Documentation` folder.
 
-Current documentation includes:
+### Project Documentation
 
-- Commands-Used.md
-- Domain-Controller-Setup.md
-- Troubleshooting.md
-- Project-Summary.md
+- [Lab Setup Guide](Documentation/Lab-Setup-Guide.md)
+- [Installation Notes](Documentation/Installation-Notes.md)
+- [Help Desk Administration Tasks](Documentation/Helpdesk-Tasks.md)
+- [Troubleshooting Notes](Documentation/Troubleshooting-Notes.md)
+- [Domain Controller Validation](Documentation/Domain-Controller-Validation.md)
+- [Project Summary](Documentation/Project-Summary.md)
 
-Future documentation will be maintained in separate repositories:
-
-- IT-Helpdesk-Lab
-- Group-Policy-Lab
-- PowerShell-AD-Automation
+The documentation includes configuration procedures, PowerShell and command-line validation, troubleshooting scenarios, and screenshot evidence demonstrating the completed lab environment.
 
 ---
 
@@ -283,19 +278,27 @@ This project demonstrates practical experience relevant to:
 
 # 🚀 Future Enhancements
 
-Additional administration scenarios will be implemented in separate repositories.
+Additional administration scenarios are being implemented in separate repositories.
 
-## Planned Repositories
+## Related Lab Projects
 
-### IT-Helpdesk-Lab
+### IT Helpdesk Lab
+
+The IT Helpdesk Lab expands on this Active Directory environment with ticket-based support and administration scenarios including:
 
 - Password resets
 - Account lockouts
-- Account unlocks
 - User onboarding and offboarding
-- Shared folders and NTFS permissions
+- Shared folders and permissions
+- NTFS permissions
+- Network drive mapping
+- Printer deployment
+- DNS troubleshooting
+- DHCP administration and troubleshooting
 
-### Group-Policy-Lab
+### Group Policy Lab
+
+Planned scenarios include:
 
 - Password policies
 - Account lockout policies
@@ -303,7 +306,9 @@ Additional administration scenarios will be implemented in separate repositories
 - Drive mappings
 - Workstation restrictions
 
-### PowerShell-AD-Automation
+### PowerShell AD Automation
+
+Planned scenarios include:
 
 - Bulk user creation
 - OU creation scripts
@@ -327,25 +332,39 @@ Active-Directory-Lab
 │
 ├── README.md
 ├── Network-Diagram.png
+│
 ├── Documentation
-│   ├── Commands-Used.md
-│   ├── Domain-Controller-Setup.md
-│   ├── Troubleshooting.md
-│   └── Project-Summary.md
+│   ├── Domain-Controller-Validation.md
+│   ├── Helpdesk-Tasks.md
+│   ├── Installation-Notes.md
+│   ├── Lab-Setup-Guide.md
+│   ├── Project-Summary.md
+│   └── Troubleshooting-Notes.md
 │
 └── Screenshots
-    ├── DC01-IPConfig.png
-    ├── DC01-DomainInfo.png
+    ├── Domain-Controller-Validation
+    │   ├── 01-Server-Renamed-To-DC01.png
+    │   ├── 02-dcdiag-dns-pass.png
+    │   ├── 03-repadmin-summary.png
+    │   ├── 04-net-share.png
+    │   ├── 05-dfsr-service.png
+    │   ├── 06-setspn-dc01.png
+    │   ├── 07-final-health-check-1.png
+    │   └── 08-final-health-check-2.png
+    │
+    ├── AD-Users.png
+    ├── Client-Domain-Login.png
+    ├── Client-System-Properties.png
+    ├── CLIENT01-Domain-Joined.png
     ├── DC01-DCDiag-01.png
     ├── DC01-DCDiag-02.png
     ├── DC01-DCDiag-03.png
     ├── DC01-DCDiag-04.png
+    ├── DC01-DomainInfo.png
+    ├── DC01-IPConfig.png
+    ├── Group-Membership-ITAdmins.png
     ├── OU-Structure.png
-    ├── Security-Groups.png
-    ├── AD-Users.png
-    ├── CLIENT01-Domain-Joined.png
-    ├── Client-Domain-Login.png
-    └── Client-System-Properties.png
+    └── Security-Groups.png
 ```
 
 ---
@@ -354,12 +373,12 @@ Active-Directory-Lab
 
 **Austin Maggs**
 
-GitHub: https://github.com/Amaggs99
+GitHub: `https://github.com/Amaggs99`
 
 ---
 
 ## Related Projects
 
-- IT-Helpdesk-Lab *(Planned)*
-- Group-Policy-Lab *(Planned)*
-- PowerShell-AD-Automation *(Planned)*
+- **IT Helpdesk Lab — Completed**
+- Group Policy Lab — Planned
+- PowerShell AD Automation — Planned

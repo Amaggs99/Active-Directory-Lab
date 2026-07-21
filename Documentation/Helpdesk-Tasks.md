@@ -37,6 +37,12 @@ New → User
 
 8. Click **Finish**.
 
+### Verify Active Directory User Accounts
+
+The created user accounts were verified within Active Directory Users and Computers to confirm that they were successfully created in the appropriate Organizational Unit.
+
+![Active Directory Users](../Screenshots/AD-Users.png)
+
 ---
 
 ## Using PowerShell
@@ -183,6 +189,18 @@ Add
 5. Click **Check Names**.
 6. Click **OK**.
 
+### Verify Security Group Configuration
+
+Security groups were configured within Active Directory to support role-based and departmental access management.
+
+![Active Directory Security Groups](../Screenshots/Security-Groups.png)
+
+### Verify IT Administrators Group Membership
+
+The user's security group membership was verified to confirm assignment to the **IT_Admins** group.
+
+![IT Admin Group Membership](../Screenshots/Group-Membership-ITAdmins.png)
+
 ---
 
 ## PowerShell Method
@@ -240,6 +258,14 @@ Select Name
 Get-ADUser jsmith -Properties * |
 Select Name,Enabled,LockedOut
 ```
+
+---
+
+# Verify Domain User Authentication
+
+After configuring the Active Directory user account and permissions, domain authentication was verified from the Windows 11 client workstation.
+
+![Client Domain Login](../Screenshots/Client-Domain-Login.png)
 
 ---
 

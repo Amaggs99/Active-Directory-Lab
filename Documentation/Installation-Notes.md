@@ -38,6 +38,12 @@ DC01
 | Default Gateway | None |
 | Preferred DNS Server | 192.168.66.10 |
 
+### DC01 Network Configuration Verification
+
+The Domain Controller was configured with a static IPv4 address and configured to use itself as the preferred DNS server.
+
+![DC01 IP Configuration](../Screenshots/DC01-IPConfig.png)
+
 ---
 
 ### Client Workstation (CLIENT01)
@@ -89,6 +95,12 @@ with the following configuration:
 | DNS Server | Installed |
 | Global Catalog | Enabled |
 
+### Domain Configuration Verification
+
+The Active Directory domain configuration was verified after DC01 was successfully promoted to a Domain Controller.
+
+![DC01 Domain Information](../Screenshots/DC01-DomainInfo.png)
+
 ---
 
 # Organizational Structure Created
@@ -103,6 +115,12 @@ adlab.local
     └── Service Accounts
 ```
 
+### Organizational Unit Structure
+
+The Organizational Unit structure was created to logically organize Active Directory objects and provide a foundation for administration, delegation, and future Group Policy deployment.
+
+![Active Directory OU Structure](../Screenshots/OU-Structure.png)
+
 ---
 
 # Security Groups Created
@@ -114,6 +132,12 @@ HR
 Sales
 ```
 
+### Security Group Configuration
+
+Security groups were created to support departmental organization and group-based access control within the Active Directory environment.
+
+![Active Directory Security Groups](../Screenshots/Security-Groups.png)
+
 ---
 
 # Test Users Created
@@ -124,6 +148,12 @@ Sales
 | Sarah Brown | sbrown | Help Desk |
 | Emily Davis | edavis | HR |
 | Mike Wilson | mwilson | Sales |
+
+### Active Directory User Accounts
+
+Test user accounts were created to represent users across multiple departments within the simulated organization.
+
+![Active Directory Users](../Screenshots/AD-Users.png)
 
 ---
 
@@ -188,6 +218,18 @@ The following tests were completed successfully:
 - Domain authentication verified
 - CLIENT01 visible in Active Directory Users and Computers
 - Successful login using domain credentials
+
+### Verify CLIENT01 Domain Membership
+
+CLIENT01 was successfully joined to the `adlab.local` Active Directory domain.
+
+![CLIENT01 Domain Joined](../Screenshots/CLIENT01-Domain-Joined.png)
+
+### Verify Domain Authentication
+
+Successful domain authentication was confirmed by signing into CLIENT01 using Active Directory domain credentials.
+
+![Client Domain Login](../Screenshots/Client-Domain-Login.png)
 
 ---
 

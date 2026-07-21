@@ -44,6 +44,12 @@ Configured static IP addresses:
 | DC01 | 192.168.66.10 |
 | CLIENT01 | 192.168.66.20 |
 
+### Verify DC01 Network Configuration
+
+After correcting the virtual network configuration, DC01 was verified with the static IP address `192.168.66.10` and the appropriate DNS configuration.
+
+![DC01 IP Configuration](../Screenshots/DC01-IPConfig.png)
+
 ---
 
 ## Verification
@@ -92,6 +98,12 @@ Verified:
 nslookup adlab.local
 ```
 
+### Verify Successful Domain Join
+
+After correcting the DNS configuration, CLIENT01 was successfully joined to the `adlab.local` Active Directory domain.
+
+![CLIENT01 Domain Joined](../Screenshots/CLIENT01-Domain-Joined.png)
+
 ---
 
 ## Result
@@ -130,6 +142,12 @@ Verified:
 - DNS configuration
 - Domain membership
 - Domain Controller health
+
+### Verify Domain Authentication
+
+After network connectivity, DNS configuration, domain membership, and Domain Controller health were verified, domain authentication was successfully tested from CLIENT01.
+
+![Client Domain Login](../Screenshots/Client-Domain-Login.png)
 
 ---
 

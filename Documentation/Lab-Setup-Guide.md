@@ -125,6 +125,12 @@ Configure:
 | Subnet Mask | 255.255.255.0 |
 | Preferred DNS | 192.168.66.10 |
 
+### DC01 Network Configuration
+
+The Domain Controller was configured with a static IPv4 address and configured to use itself as the preferred DNS server.
+
+![DC01 IP Configuration](../Screenshots/DC01-IPConfig.png)
+
 ---
 
 ## Step 4 – Install Active Directory Domain Services
@@ -154,6 +160,12 @@ Domain:
 adlab.local
 ```
 
+### Domain Controller Information
+
+The completed Active Directory domain configuration was verified after DC01 was promoted to a Domain Controller.
+
+![DC01 Domain Information](../Screenshots/DC01-DomainInfo.png)
+
 ---
 
 # Active Directory Structure
@@ -168,6 +180,12 @@ adlab.local
     └── Service Accounts
 ```
 
+### Organizational Unit Structure
+
+The Active Directory Organizational Unit structure was created to logically organize users, groups, computers, servers, and service accounts.
+
+![Active Directory OU Structure](../Screenshots/OU-Structure.png)
+
 ---
 
 # Security Groups Created
@@ -179,6 +197,12 @@ HR
 Sales
 ```
 
+### Active Directory Security Groups
+
+Security groups were created to support role-based access and departmental administration within the lab environment.
+
+![Active Directory Security Groups](../Screenshots/Security-Groups.png)
+
 ---
 
 # Test Users Created
@@ -189,6 +213,12 @@ Sales
 | Sarah Brown | sbrown | Help Desk |
 | Emily Davis | edavis | HR |
 | Mike Wilson | mwilson | Sales |
+
+### Active Directory User Accounts
+
+Test user accounts were created and organized within Active Directory to simulate users from multiple departments.
+
+![Active Directory Users](../Screenshots/AD-Users.png)
 
 ---
 
@@ -217,6 +247,24 @@ Rename-Computer -NewName "CLIENT01" -Restart
 ```powershell
 Add-Computer -DomainName adlab.local -Credential adlab\Administrator -Restart
 ```
+
+### CLIENT01 Domain Membership
+
+The Windows 11 client was successfully joined to the `adlab.local` Active Directory domain.
+
+![CLIENT01 Domain Joined](../Screenshots/CLIENT01-Domain-Joined.png)
+
+### Verify Client System Properties
+
+Windows System Properties were used to verify the workstation name and Active Directory domain membership.
+
+![CLIENT01 System Properties](../Screenshots/Client-System-Properties.png)
+
+### Verify Domain User Authentication
+
+Domain authentication was tested from CLIENT01 using an Active Directory user account.
+
+![Client Domain Login](../Screenshots/Client-Domain-Login.png)
 
 ---
 
